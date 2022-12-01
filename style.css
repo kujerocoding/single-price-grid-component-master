@@ -4,7 +4,7 @@
     --FF: 'Karla', sans-serif;
     --FS: 16px;
     --CYAN: hsl(179, 62%, 43%);
-    --LIGHTCYAN: hsla(179, 62%, 43%, 0.5);
+    --LIGHTCYAN: hsla(179, 62%, 43%, 0.7);
     --BRIGHTYELLOW: hsl(71, 73%, 54%);
     --LIGHTGRAY: hsl(204, 43%, 93%);
     --VERYLIGHTBLUE: hsla(217, 22%, 67%, 0.377);
@@ -24,45 +24,49 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .main__container {
     min-width: 315px;
     max-width: 650px;
-    padding-inline: 30px;
-    margin: 0 auto;
+    margin: 0 30px;
     border-radius: 10px;
+    box-shadow: 0px 0px 20px -10px gray;
 }
 
-.main__container h2 {
-    font-size: 1.2em;
-    font-weight: lighter;
+.text__join--container, .text__subscription--container, .text__whyus--container {
+    padding: 20px;
 }
 
 .text__join--container {
     background-color: white;
-    padding-inline: 20px;
-    padding-bottom: 20px;
     border-radius: 10px 10px 0 0;
 }
 
-.text--join > * {
-    padding-top: 20px;
+h2 {
+    font-size: 1.2em;
+    padding-bottom: 20px;
+}
+
+h3 {
+    padding-bottom: 20px;
 }
 
 .text--join h2 {
+    font-size: clamp(1.2em, 2vw, 1.6em);
     color: var(--CYAN);
 }
 
 .text--join h3 {
     color: var(--BRIGHTYELLOW);
-    font-weight: 1em;
+    font-size: clamp(1em, 2vw, 1.2em);
 }
 
 .text--join p {
     color: var(--GRAYISHBLUE);
     line-height: 1.5em;
-    font-size: .9em;
+    font-size: clamp(.9em, 2vw,.97em);
 }
 
 .text__subscription--container {
@@ -71,11 +75,6 @@ body {
 
 .text--subscription {
     color: var(--LIGHTGRAY);
-    padding-inline: 20px;
-}
-
-.text--subscription > * {
-    padding-top: 20px;
 }
 
 .text--subscription h3 {
@@ -89,19 +88,24 @@ body {
     gap: 10px;
 }
 
-.text--subscription h3 > span {
-    font-size: 1rem;
-    color: var(--VERYLIGHTBLUE);
+.text__permonth {
+    font-size: .9em;
+    opacity: 50%;
+}
+
+.text--subscription > p {
+    padding-top: 10px;
 }
 
 .text--subscription button {
     all: unset;
     background-color: var(--BRIGHTYELLOW);
-    width: calc(100% - 40px);
+    width: calc(100% - 30px);
     text-align: center;
-    margin-block: 20px;
-    padding: 20px;
+    margin: 30px 0 10px 0;
+    padding: 15px;
     border-radius: 5px;
+    box-shadow: 0px 10px 20px -15px #333;
 }
 
 .text__whyus--container {
@@ -111,13 +115,11 @@ body {
 
 .text--whyus {
     color: var(--LIGHTGRAY);
-    padding: 20px;
 }
 
 .text--whyus p {
-    color: var(--LIGHTGRAY);
+    opacity: 70%;
     font-weight: lighter;
-    padding-top: 20px;
     padding-right: 35%;
     line-height: 1.5em;
     font-size: .9em;
@@ -130,7 +132,6 @@ body {
     }
 
     .text__join--container {
-        padding-bottom: 40px;
         grid-column: 1 / span 2;
     }
 
@@ -141,4 +142,17 @@ body {
     .text__whyus--container {
         border-radius: 0 0 10px 0;
     }
+
+    .text__join--container, .text__subscription--container, .text__whyus--container {
+        padding: 40px;
+    }
+
+    .text--join p {
+        padding-right: 10%;
+    }
+
+    .text--whyus p {
+        padding-right: 30%;
+    }
+
 }
